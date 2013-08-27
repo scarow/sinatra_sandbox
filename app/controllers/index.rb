@@ -11,6 +11,9 @@ post '/cool_url' do
   p params
   puts "[LOG] Posting to /cool_url"
   puts "[LOG] Params: #{params.inspect}" 
+  @user_input= params[:user_input]
+
+  Note.create(:text => params[:user_input])
   erb :post_cool_url
 end
 
