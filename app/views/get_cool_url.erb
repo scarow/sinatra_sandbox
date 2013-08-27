@@ -1,4 +1,8 @@
-<div class="container">
-<p> We are in the "get cool url" folder <p>
+ <p>
+  <ul>
+    <% @list_of_notes.each do |x| %>
+    <li> <%= x.text %> </li>
+    <% end %>
+  </ul>
+</p>
 
-</div>

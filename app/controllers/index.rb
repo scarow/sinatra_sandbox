@@ -1,5 +1,3 @@
-
-
 get '/' do
   puts "[LOG] Getting /"
   puts "[LOG] Params: #{params.inspect}"
@@ -8,11 +6,9 @@ end
 
 
 post '/cool_url' do
-  p params
   puts "[LOG] Posting to /cool_url"
   puts "[LOG] Params: #{params.inspect}" 
   @user_input= params[:user_input]
-
   Note.create(:text => params[:user_input])
   erb :post_cool_url
 end
@@ -20,6 +16,10 @@ end
 get '/cool_url' do
   puts "[LOG] Getting /cool_url"
   puts "[LOG] Params: #{params.inspect}"
+
+
+  @list_of_notes = Note.all
+
   erb :get_cool_url
 end
 
